@@ -122,6 +122,7 @@ for i in range(len(num1)):
 			print('performing test on division')
 			print ('******************************************************************')
 			for i in range(len(num1)):
+
 				self.assertAlmostEqual(div[i],f[i])
 				if (str(div[i])[:11]) == ((str(f[i]))[:11]):
 					print( (str(div[i])[:11])+' '+((str(f[i]))[:11])+ ' ' + 'success' )
