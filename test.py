@@ -1,4 +1,5 @@
-from flask import Flask,request 
+#!/usr/bin/python3
+#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -41,9 +42,18 @@ for i in range(len(num1)):
 
 	class test(unittest.TestCase):
 		def test_mul(self):
+			print('performing test on multiplication')
+			print('**********************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(mul[i],e[i])
+				
+				if (str(mul[i])[:11]) == (str(e[i])[:11]):
+					print((str(mul[i])[:11])+' '+((str(e[i]))[:11])+ ' ' + 'success')
+				else:
+					print((str(mul[i])[:11])+' '+((str(e[i]))[:11])+ ' ' + 'fail')
 
+
+			print('**********************************')
 
 if __name__ == '__main__':	
 	unittest.main()
