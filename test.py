@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #from flask import Flask,request 
 import unittest
 import requests
@@ -14,11 +13,14 @@ for i in range(100):
 	a=random.uniform(0,1)
 	if a < 0.5:
 		num1.append(random.randint(1,100))
-		num2.append(random.randint(100,200))
+
+		num2.append(random.randint(1,100))
+
 
 	else:
 		num1.append(random.uniform(1,100))
 		num2.append(random.uniform(100,200))
+
 
 #print(num1)
 #print(num2)
@@ -37,6 +39,7 @@ c=[]
 d=[]
 e=[]
 f=[]
+
 for i in range(len(num1)):
 	
 	parameters = {
@@ -64,6 +67,7 @@ for i in range(len(num1)):
 	response2 = requests.get(url2, params=parameters)
 	data2=response2.text
 	d.append(float(data2))
+
 
 
 	url3 = 'http://127.0.0.1:5000/mul'
