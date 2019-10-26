@@ -8,6 +8,7 @@ def index():
     return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
 
 
+
 @app.route('/add', methods=['GET','POST'])
 def addition():
     value1=request.args.get('A',default = 0, type = Fraction)
