@@ -1,5 +1,5 @@
-#!usr/bin/python
-from flask import Flask,request 
+#!/usr/bin/python
+#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -21,7 +21,7 @@ for i in range(100):
 
 
 add=[]
-
+c=[]
 for i in range(len(num1)):
 	
 	parameters = {
@@ -42,10 +42,15 @@ for i in range(len(num1)):
 
 
 		def test_Add(self):
+			print('performing test on addition')
+			print('****************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(add[i],c[i])
-				
-
+				if (str(add[i])[:11]) == (str(c[i])[:11]):
+					print( (str(add[i])[:11])+' '+((str(c[i]))[:11])+ ' ' + 'success' )
+				else:
+					print( (str(add[i])[:11])+' '+((str(c[i]))[:11])+ ' ' + 'fail' )
+			print('****************************************')	
 
 if __name__ == '__main__':	
 	unittest.main()
