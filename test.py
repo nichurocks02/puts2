@@ -1,5 +1,5 @@
-#!usr/bin/python
-from flask import Flask,request 
+#!/usr/bin/python3
+#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -81,25 +81,53 @@ for i in range(len(num1)):
 
 
 		def test_Add(self):
+			print('performing test on addition')
+			print ('******************************************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(add[i],c[i])
-				
-
+				''' i have used almost equal because the output of flask app gives 9 points after decimal
+				where as calculation of parameters over here gives 14 points after decimals'''
+				if (str(add[i])[:11]) == ((str(c[i]))[:11]):
+					print( (str(add[i])[:11])+' '+((str(c[i]))[:11])+ ' ' + 'success' )
+				else:
+					print( (str(add[i])[:11])+' '+((str(c[i]))[:11])+ ' ' + 'fail' ) 
+			print ('******************************************************************')
 		def test_Sub(self):
+			print('performing test on subtraction')
+			print ('******************************************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(sub[i],d[i])
-
+				if (str(sub[i])[:11]) == ((str(d[i]))[:11]):
+					print( (str(sub[i])[:11])+' '+((str(d[i]))[:11])+ ' ' + 'success' )
+				else:
+					print( (str(sub[i])[:11])+' '+((str(d[i]))[:11])+ ' ' + 'fail' ) 
+			print ('******************************************************************')
 			
 		def test_mul(self):
-			count=0
+			#count=0
+			print('performing test on multiplication')
+			print ('******************************************************************')
 			for i in range(len(num1)):
 				#count=count+1
 				#print(count)
 				self.assertAlmostEqual(mul[i],e[i])
+				if (str(mul[i])[:11]) == ((str(e[i]))[:11]):
+					print( (str(mul[i])[:11])+' '+((str(e[i]))[:11])+ ' ' + 'success' )
+				else:
+					print( (str(mul[i])[:11])+' '+((str(e[i]))[:11])+ ' ' + 'fail' ) 
+			print ('******************************************************************')
 			
 		def test_div(self):
+			print('performing test on division')
+			print ('******************************************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(div[i],f[i])
+				if (str(div[i])[:11]) == ((str(f[i]))[:11]):
+					print( (str(div[i])[:11])+' '+((str(f[i]))[:11])+ ' ' + 'success' )
+				else:
+					print( (str(div[i])[:11])+' '+((str(f[i]))[:11])+ ' ' + 'fail' ) 
+			print ('******************************************************************')
+			
 
 '''print(len(c))
 print(len(d))
