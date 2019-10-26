@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -14,14 +13,12 @@ for i in range(100):
 	a=random.uniform(0,1)
 	if a < 0.5:
 		num1.append(random.randint(1,100))
-
 		num2.append(random.randint(100,200))
 
 
 	else:
 		num1.append(random.uniform(1,100))
 		num2.append(random.uniform(100,200))
-
 
 
 #print(num1)
@@ -49,7 +46,6 @@ for i in range(len(num1)):
 	"B":Fraction(num2[i])
 	}
 
-	#print(count)
 	#r.append(parameters["A"])
 	result_add = float(parameters["A"] + parameters["B"])
 	add.append(result_add)
