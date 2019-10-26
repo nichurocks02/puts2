@@ -45,10 +45,10 @@ for i in range(len(num1)):
 			for i in range(len(num1)):
 
 				self.assertAlmostEqual(div[i],f[i])
-				if (str(div[i][:11]))==(str(f[i])[:11]):
-					print(str(div[i][:11]) + ' ' + (str(f[i])[:11]) + ' ' + 'success')
+				if (str(div[i])[:11])==(str(f[i]))[:11]:
+					print(str(div[i])[:11] + ' ' + (str(f[i]))[:11] + ' ' + 'success')
 				else:
-					print(str(div[i][:11]) + ' ' + (str(f[i])[:11]) + ' ' + 'fail')
+					print(str(div[i])[:11] + ' ' + (str(f[i]))[:11] + ' ' + 'fail')
 
 if __name__ == '__main__':	
 	unittest.main()
