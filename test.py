@@ -1,4 +1,5 @@
-from flask import Flask,request 
+#!/usr/bin/python3
+#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -42,8 +43,12 @@ for i in range(len(num1)):
 	class test(unittest.TestCase):
 		def test_div(self):
 			for i in range(len(num1)):
-				self.assertAlmostEqual(div[i],f[i])
 
+				self.assertAlmostEqual(div[i],f[i])
+				if (str(div[i][:11]))==(str(f[i])[:11]):
+					print(str(div[i][:11]) + ' ' + (str(f[i])[:11]) + ' ' + 'success')
+				else:
+					print(str(div[i][:11]) + ' ' + (str(f[i])[:11]) + ' ' + 'fail')
 
 if __name__ == '__main__':	
 	unittest.main()
