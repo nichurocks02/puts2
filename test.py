@@ -1,5 +1,5 @@
-#!usr/bin/python
-from flask import Flask,request 
+#!/usr/bin/python
+#from flask import Flask,request 
 import unittest
 import requests
 import json 
@@ -13,7 +13,7 @@ for i in range(100):
 	a=random.uniform(0,1)
 	if a < 0.5:
 		num1.append(random.randint(1,100))
-		num2.append(random.randint(100,200))
+		num2.append(random.randint(1,100))
 
 	else:
 		num1.append(random.uniform(1,100))
@@ -42,9 +42,16 @@ for i in range(len(num1)):
 	class test(unittest.TestCase):	
 
 		def test_Sub(self):
+			print('performing test operation on subtraction')
+			print('******************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(sub[i],d[i])
+				if (str(sub[i])[:11]) == (str(d[i])[:11]):
+					print((str(sub[i])[:11])+' '+((str(d[i]))[:11])+ ' ' + 'success')
+				else:
+					print((str(sub[i])[:11])+' '+((str(d[i]))[:11])+ ' ' + 'fail')	
 
+			print('******************************************')
 			
 if __name__ == '__main__':	
 	unittest.main()
