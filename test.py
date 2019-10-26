@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+
 #from flask import Flask,request 
 import unittest
 import requests
@@ -36,13 +37,13 @@ c=[]
 d=[]
 e=[]
 f=[]
-r=[]
 for i in range(len(num1)):
 	
 	parameters = {
 	"A":Fraction(num1[i]),
 	"B":Fraction(num2[i])
 	}
+
 	#print(count)
 	#r.append(parameters["A"])
 	result_add = float(parameters["A"] + parameters["B"])
@@ -58,7 +59,6 @@ for i in range(len(num1)):
 	response1 = requests.get(url1, params=parameters)
 	data=response1.text
 	c.append(float(data))
-
 
 	url2 = 'http://127.0.0.1:5000/sub'
 	response2 = requests.get(url2, params=parameters)
@@ -82,6 +82,7 @@ for i in range(len(num1)):
 
 		def test_Add(self):
 			print('performing test on addition')
+
 			print ('******************************************************************')
 			for i in range(len(num1)):
 				self.assertAlmostEqual(add[i],c[i])
@@ -140,3 +141,4 @@ print(len(mul))
 '''
 if __name__ == '__main__':	
 	unittest.main()
+
