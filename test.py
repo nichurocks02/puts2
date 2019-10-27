@@ -13,12 +13,12 @@ for i in range(100):
 	a=random.uniform(0,1)
 	if a < 0.5:
 		num1.append(random.randint(1,100))
-		num2.append(random.randint(100,200))
+		num2.append(random.randint(1,100))
 
 
 	else:
 		num1.append(random.uniform(1,100))
-		num2.append(random.uniform(100,200))
+		num2.append(random.uniform(1,100))
 
 
 #print(num1)
